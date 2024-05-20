@@ -1,4 +1,6 @@
-var menu = ['North Shore', 'South Shore', 'West Shore', 'East Shore']
+let menu = ['North Shore', 'South Shore', 'West Shore', 'East Shore'];
+
+
 
 const headerSwiper = new Swiper('.header__content', {
     slideClass: 'header__slider-item',
@@ -24,9 +26,34 @@ const headerSwiper = new Swiper('.header__content', {
           </div>';
         },
     },
-    /*     autoplay: {
-            delay: 5000,
-        }, */
+    autoplay: {
+        delay: 5000,
+    },
 
 });
 
+
+const swiper2 = new Swiper('.surf-slider__content', {
+    slideClass: 'surf-box',
+    wrapperClass: 'surf-slider',
+    slidesPerView: 4,
+    navigation: {
+        nextEl: ".surf-slider__button-next",
+        prevEl: ".surf-slider__button-prev",
+    },
+});
+
+
+const dotsMap = document.querySelectorAll('.slider-dots');
+
+
+dotsMap.forEach(dot => {
+    dot.addEventListener('click', () => {
+        if (!dot.classList.contains('slider-dots--active')) {
+            dot.classList.add('slider-dots--active');
+
+        } else {
+            dot.classList.remove('slider-dots--active');
+        }
+    });
+});

@@ -54,8 +54,9 @@ function scripts() {
 function styles() {
   return src(
     [
-      'node_modules/animate.css/animate.min.css',
+
       'node_modules/swiper/swiper-bundle.min.css',
+      'node_modules/animate.css/animate.min.css',
       'app/scss/style.scss',
     ]
   )
