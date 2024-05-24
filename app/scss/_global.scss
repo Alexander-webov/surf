@@ -2,6 +2,11 @@ html,
 body {
   height: 100%;
 }
+*,
+html,
+body {
+  box-sizing: border-box;
+}
 body {
   font-family: "Fira Sans", sans-serif;
   font-weight: 400;
@@ -131,5 +136,40 @@ a {
       width: 25px;
       height: 21px;
     }
+  }
+}
+
+.descr {
+  display: inline-block;
+  text-align: right;
+  &__head {
+    font-weight: 800;
+    font-size: 40px;
+    span {
+      font-weight: 100;
+    }
+    img {
+      display: inline-block;
+    }
+  }
+}
+.headline-right {
+  font-size: 22px;
+  line-height: 32px;
+  letter-spacing: 7.333px;
+  text-transform: uppercase;
+  color: #fff;
+  opacity: 0.5;
+  padding-right: 103px;
+  position: relative;
+  display: inline-block;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 1px;
+    background-color: #fff;
+    right: 0;
+    top: 50%;
   }
 }
