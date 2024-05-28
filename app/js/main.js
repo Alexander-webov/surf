@@ -58,6 +58,19 @@ const swiperTravel = new Swiper('.travel__slider', {
 });
 
 
+const swiperSleep = new Swiper('.sleep__slider', {
+    slideClass: 'sleep__slider-item',
+    wrapperClass: 'sleep__slider-content',
+    slidesPerView: 1,
+    loop: true,
+
+    navigation: {
+        nextEl: ".sleep__slider-button-next",
+        prevEl: ".sleep__slider-button-prev",
+    },
+});
+
+
 const dotsMap = document.querySelectorAll('.slider-dots');
 
 
@@ -83,3 +96,63 @@ surfBox.forEach(el => {
         }
     })
 })
+
+
+/* input calc */
+jQuery('<div class="quantity-nav"><div class="quantity-button quantity-up">+</div><div class="quantity-button quantity-down">-</div></div>').insertAfter('.quantity input');
+jQuery('.quantity').each(function () {
+    var spinner = jQuery(this),
+        input = spinner.find('input[type="number"]'),
+        btnUp = spinner.find('.quantity-up'),
+        btnDown = spinner.find('.quantity-down'),
+        min = input.attr('min'),
+        max = input.attr('max');
+
+    btnUp.click(function () {
+        var oldValue = parseFloat(input.val());
+        if (oldValue >= max) {
+            var newVal = oldValue;
+        } else {
+            var newVal = oldValue + 1;
+        }
+        spinner.find("input").val(newVal);
+        spinner.find("input").trigger("change");
+    });
+
+    btnDown.click(function () {
+        var oldValue = parseFloat(input.val());
+        if (oldValue <= min) {
+            var newVal = oldValue;
+        } else {
+            var newVal = oldValue - 1;
+        }
+        spinner.find("input").val(newVal);
+        spinner.find("input").trigger("change");
+    });
+
+});
+
+
+/* calc  */
+
+
+
+const quantityButton = document.querySelectorAll('.quantity-button');
+const nights = document.querySelector('.nights');
+const guests = document.querySelector('.guests');
+const sum = document.querySelector('.sum');
+let total = nights.value * sum.getAttribute('data-nights') + (guests.value - 1) * sum.getAttribute('data-guests');;
+
+
+
+const calculator = () => {
+    sum.innerHTML = total;
+    quantityButton.forEach(el => {
+        el.addEventListener('click', () => {
+            total = nights.value * sum.getAttribute('data-nights') + (guests.value - 1) * sum.getAttribute('data-guests');
+            sum.innerHTML = total;
+        })
+    })
+}
+
+calculator();
