@@ -71,6 +71,19 @@ const swiperSleep = new Swiper('.sleep__slider', {
 });
 
 
+const swiperShop = new Swiper('.shop__slider', {
+    slideClass: 'shop__slider-item',
+    wrapperClass: 'shop__slider-content',
+    slidesPerView: 1,
+    loop: true,
+
+    navigation: {
+        nextEl: ".shop__slider-button-next",
+        prevEl: ".shop__slider-button-prev",
+    },
+});
+
+
 const dotsMap = document.querySelectorAll('.slider-dots');
 
 
@@ -156,3 +169,18 @@ const calculator = () => {
 }
 
 calculator();
+
+
+
+const surfboardBoxCircle = document.querySelectorAll('.surfboard-box__circle');
+const circle = document.querySelector('.surfboard-box__circle-row.active');
+const surfboardBoxContent = document.querySelectorAll('.surfboard-box__content');
+
+surfboardBoxCircle.forEach((el, key) => {
+
+    el.addEventListener('click', () => {
+        circle.classList.toggle('active');
+        surfboardBoxContent[key].classList.toggle('active');
+    });
+})
+

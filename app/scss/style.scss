@@ -631,7 +631,7 @@
 
 /* 
 
-
+sleep
 
 
 
@@ -734,16 +734,231 @@
 .sleep__slider-button-next {
   right: 80px;
 }
-.descr__head {
-  text-align: left;
+
+.holder__star-list {
+  margin-left: -15px;
   display: flex;
-  .holder__star-list {
-    li {
-      margin-right: -25px;
-    }
+  li {
+    margin-right: -25px;
+  }
+  display: flex;
+  img {
+    padding-left: 0;
+  }
+}
+
+/* 
+
+shop
+
+
+
+*/
+
+.shop {
+  background-image: url(../images/shop-bg.png);
+  background-repeat: no-repeat;
+  background-position: center right;
+  &__slider {
+    padding-left: 132px;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+  }
+  &__slider-content {
     display: flex;
-    img {
-      padding-left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  &__slider-item {
+    flex-shrink: 0;
+  }
+  &__slider-info {
+    max-width: 480px;
+    width: 100%;
+    margin-right: 40px;
+    padding-top: 160px;
+  }
+  &__slider-inner {
+    display: flex;
+  }
+  &__slider-price {
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 40px;
+    margin-bottom: 64px;
+    sup {
+      font-size: 18px;
+      padding-left: 2px;
+    }
+  }
+  &__slider-products {
+    display: flex;
+    align-items: flex-end;
+    margin-left: 160px;
+  }
+  &__extras {
+    padding-left: 150px;
+  }
+  &__extras-inner {
+    display: flex;
+  }
+  &__extras-title {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 25px;
+  }
+  &__extras-box {
+    text-align: center;
+    margin-right: 57px;
+  }
+  &__extras-name {
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 8px;
+    opacity: 0.5;
+  }
+  &__extras-price {
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 40px;
+  }
+  &__extras-img {
+    min-height: 105px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+  }
+}
+
+.descr__head-shop {
+  max-width: 340px;
+  margin-bottom: 47px;
+}
+
+.shop__slider-button-prev,
+.shop__slider-button-next {
+  opacity: 0.5;
+  z-index: 4;
+  position: absolute;
+  top: 0px;
+  right: 0;
+  cursor: pointer;
+}
+.shop__slider-button-prev {
+  right: 125px;
+}
+.shop__slider-button-next {
+  right: 80px;
+}
+
+.surfboard {
+  position: relative;
+  &-box {
+    position: absolute;
+
+    display: flex;
+    align-items: center;
+  }
+  &-box__position-1 {
+    top: 200px;
+    right: 30px;
+  }
+  &-box__position-2 {
+    top: 310px;
+    left: 10px;
+  }
+  &-box__position-3 {
+    bottom: 65px;
+    left: 52px;
+    .surfboard-box__content {
+      display: none;
+      position: absolute;
+      width: 400px;
+      font-weight: 800;
+      font-size: 24px;
+      line-height: 24px;
+      padding-left: 126px;
+      left: -490px;
+      &::before {
+        content: "";
+        position: absolute;
+        width: 80px;
+        height: 1px;
+        background-color: #fff;
+        left: auto;
+        right: -80px;
+        top: 50%;
+      }
+    }
+  }
+  &-box__circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: relative;
+    background-color: #fff;
+    cursor: pointer;
+    z-index: 10;
+  }
+  &-box__circle-row {
+    background-color: $green;
+    position: absolute;
+    width: 12px;
+    height: 2px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    transition: all 0.2s;
+
+    + .surfboard-box__circle-row.active {
+      transform: translateX(-50%) rotate(90deg);
+    }
+    + .surfboard-box__circle-row {
+      transform: translate(-50%) rotate(0);
+    }
+  }
+  &-box__content {
+    display: none;
+    position: absolute;
+    width: 400px;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 24px;
+    padding-left: 126px;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 80px;
+      height: 1px;
+      background-color: #fff;
+      left: 33px;
+      top: 50%;
+    }
+  }
+}
+
+.surfboard-box__content.active {
+  display: block;
+}
+
+.footer {
+  padding: 280px 0 34px;
+  text-align: center;
+  &__copy {
+    margin-top: 27px;
+    font-size: 12px;
+    font-weight: 300;
+    opacity: 0.5;
+    letter-spacing: 1.05px;
+  }
+  .btn {
+    span {
+      padding: 17px;
+      &::after {
+        display: none;
+      }
     }
   }
 }
