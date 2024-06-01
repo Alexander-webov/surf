@@ -26,9 +26,9 @@ const headerSwiper = new Swiper('.header__content', {
           </div>';
         },
     },
-    autoplay: {
-        delay: 5000,
-    },
+    /*     autoplay: {
+            delay: 5000,
+        }, */
 
 });
 
@@ -150,7 +150,7 @@ jQuery('.quantity').each(function () {
 
 
 
-const quantityButton = document.querySelectorAll('.quantity-button');
+/* const quantityButton = document.querySelectorAll('.quantity-button');
 const nights = document.querySelector('.nights');
 const guests = document.querySelector('.guests');
 const sum = document.querySelector('.sum');
@@ -169,7 +169,7 @@ const calculator = () => {
 }
 
 calculator();
-
+ */
 
 
 const surfboardBoxCircle = document.querySelectorAll('.surfboard-box__circle');
@@ -184,3 +184,12 @@ surfboardBoxCircle.forEach((el, key) => {
     });
 })
 
+/* mobile menu */
+
+const menuBtn = document.querySelector('.menu-btn');
+const headerMenu = document.querySelector('.menu');
+
+menuBtn.addEventListener('click', () => {
+    console.log(1);
+    headerMenu.classList.toggle('active');
+})
