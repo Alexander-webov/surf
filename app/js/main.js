@@ -36,12 +36,41 @@ const headerSwiper = new Swiper('.header__content', {
 const swiper2 = new Swiper('.surf-slider__content', {
     slideClass: 'surf-box',
     wrapperClass: 'surf-slider',
-    slidesPerView: 4,
-    loop: true,
+    slidesPerView: 1,
+    loop: false,
+    centeredSlides: true,
+    spaceBetween: -30,
     navigation: {
         nextEl: ".surf-slider__button-next",
         prevEl: ".surf-slider__button-prev",
     },
+    breakpoints: {
+        559: {
+            slidesPerView: 2,
+            loop: false,
+            centeredSlides: true,
+            spaceBetween: 0,
+
+        },
+        800: {
+            slidesPerView: 3,
+            loop: false,
+            centeredSlides: true,
+            spaceBetween: 0,
+
+        },
+
+        1080: {
+            slidesPerView: 4,
+            loop: false,
+            centeredSlides: true,
+            spaceBetween: 0,
+
+        },
+
+
+    }
+
 });
 
 
@@ -150,7 +179,7 @@ jQuery('.quantity').each(function () {
 
 
 
-/* const quantityButton = document.querySelectorAll('.quantity-button');
+const quantityButton = document.querySelectorAll('.quantity-button');
 const nights = document.querySelector('.nights');
 const guests = document.querySelector('.guests');
 const sum = document.querySelector('.sum');
@@ -169,7 +198,7 @@ const calculator = () => {
 }
 
 calculator();
- */
+
 
 
 const surfboardBoxCircle = document.querySelectorAll('.surfboard-box__circle');

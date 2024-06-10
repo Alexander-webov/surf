@@ -252,7 +252,6 @@
   background-size: cover;
   &__inner {
     height: 750px;
-    margin-left: -30px;
     position: relative;
     background-position: center;
     background-repeat: no-repeat;
@@ -909,14 +908,11 @@ shop
     height: 2px;
     top: 50%;
     left: 50%;
-    transform: translate(-50%);
+    transform: translate(-50%) rotate(0);
     transition: all 0.2s;
 
-    + .surfboard-box__circle-row.active {
-      transform: translateX(-50%) rotate(90deg);
-    }
     + .surfboard-box__circle-row {
-      transform: translate(-50%) rotate(0);
+      transform: translate(-50%) rotate(90deg);
     }
   }
   &-box__content {
